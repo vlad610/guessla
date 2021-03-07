@@ -8,7 +8,6 @@ var t = 0;
 module.exports = async function (context, req) {
 
     context.log("Request received. Body:");
-    //context.log(req.body);
     context.log(JSON.stringify(querystring.parse(req.body)));
     const reqJSON = querystring.parse(req.body);
     
