@@ -1,0 +1,10 @@
+{
+  "name": "guessla",
+  "version": "0.0.1",
+  "description": "TSLA price guessing game bot",
+  "author": "Vlad Dancescu",
+  "dependencies": {
+    "axios": "^0.21.1",
+    "querystring": "^0.2.1"
+  }
+}
