@@ -34,7 +34,7 @@ module.exports = async function (context, req) {
 
     if ((diffMins < 0) || (diffMins > 360)) {
         if((diffMins < 390) && (diffMins > 360)) {
-            message = "No more bets in the last 30 minutes of trading, <@"+reqJSON.user_id+">.";
+            message = "No more bets in the last 30 minutes of trading, <@"+reqJSON.user_id+">!";
             context.log("No more bets in the last 30 minutes of trading.");
         } else {
             message = "Market is closed, <@"+reqJSON.user_id+">.";
