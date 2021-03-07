@@ -78,8 +78,8 @@ module.exports = async function (context, req) {
                         prediction1_t: t
                     }).then((response) => {
                         context.log("Created successfully: "+response.status);
-                        //message = "1st guess $"+prediction+" T"+t+" received from <@"+reqJSON.user_id+">";
-                        message = "Guess $"+prediction+" T"+t+" received.";
+                        message = "1st guess $"+prediction+" T"+t+" received from <@"+reqJSON.user_id+">";
+                        //message = "Guess $"+prediction+" T"+t+" received.";
                     }, (error) => {
                         context.log("There was an error: "+error.response.status);
                     });
