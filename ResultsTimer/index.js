@@ -1,5 +1,5 @@
 const axios = require('axios');
-const url = 'https://guesslastorage.table.core.windows.net/daily';
+const url = "https://"+process.env.storageAccount+".table.core.windows.net/daily";
 const key = process.env.sasToken;
 var message = "";
 var winner = "";
