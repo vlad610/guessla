@@ -3,7 +3,8 @@ const url = "https://"+process.env.storageAccount+".table.core.windows.net/daily
 const key = process.env.sasToken;
 var message = "";
 var winner = "";
-var iv = 88.2 * 0.014;
+//var iv = 88.2 * 0.014;
+var iv = parseFloat(process.env.iv) * 0.014;
 var individual_max = 0;
 var overall_max = 0;
 var closing = 0;
@@ -33,6 +34,7 @@ module.exports = async function (context, myTimer) {
         //context.log("error: "+error.response.data);
     });
 
+    message += "Today's Implied Volatility (IV) is: "+process.env.iv+"\n\n";
     message += "Today's results:\n"
     context.log(JSON.stringify(getResponse.data.value));
     getResponse.data.value.forEach(myFunction);
