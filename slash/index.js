@@ -23,7 +23,7 @@ module.exports = async function (context, req) {
     var now = new Date();
     context.log(now);
     var openDate = new Date();
-    openDate.setHours(14);
+    openDate.setHours(13);
     openDate.setMinutes(30);
     openDate.setSeconds(0);
     openDate.setMilliseconds(0);
