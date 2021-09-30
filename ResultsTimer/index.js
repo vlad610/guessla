@@ -43,7 +43,7 @@ module.exports = async function (context, myTimer) {
         individual_max = 0;
         temp_max = 0;
         message += "<@"+item.RowKey+"> - $"+item.prediction1+" T"+item.prediction1_t;
-        temp_max = ((iv * item.prediction1_t) / Math.abs(closing - item.prediction1)).toFixed(2);
+        temp_max = parseFloat(((iv * item.prediction1_t) / Math.abs(closing - item.prediction1)).toFixed(2));
         if (temp_max > individual_max) {
             individual_max = temp_max;
         }
@@ -51,7 +51,7 @@ module.exports = async function (context, myTimer) {
 
         if (typeof item.prediction2 != "undefined") {
             message += ", $"+item.prediction2+" T"+item.prediction2_t;
-            temp_max = ((iv * item.prediction2_t) / Math.abs(closing - item.prediction2)).toFixed(2);
+            temp_max = parseFloat(((iv * item.prediction2_t) / Math.abs(closing - item.prediction2)).toFixed(2));
             if (temp_max > individual_max) {
                 individual_max = temp_max;
             }
@@ -59,7 +59,7 @@ module.exports = async function (context, myTimer) {
         }
         if (typeof item.prediction3 != "undefined") {
             message += ", $"+item.prediction3+" T"+item.prediction3_t;
-            temp_max = ((iv * item.prediction3_t) / Math.abs(closing - item.prediction3)).toFixed(2);
+            temp_max = parseFloat(((iv * item.prediction3_t) / Math.abs(closing - item.prediction3)).toFixed(2));
             if (temp_max > individual_max) {
                 individual_max = temp_max;
             }
