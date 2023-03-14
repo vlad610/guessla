@@ -4,7 +4,7 @@
       "name": "myTimer",
       "type": "timerTrigger",
       "direction": "in",
-      "schedule": "5 0 21 * * MON,TUE,WED,THU,FRI"
+      "schedule": "5 0 20 * * MON,TUE,WED,THU,FRI"
     }
   ]
 }
