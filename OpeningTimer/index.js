@@ -4,9 +4,9 @@ var priceNow = 0;
 var closing = 0;
 module.exports = async function (context, myTimer) {
 
-    const getOpeningPrice = await axios.get("https://query2.finance.yahoo.com/v10/finance/quoteSummary/tsla?modules=price").then((response) => {
-        priceNow = response.data.quoteSummary.result[0].price.regularMarketPrice.raw.toFixed(2);
-        closing = response.data.quoteSummary.result[0].price.regularMarketPreviousClose.raw.toFixed(2);
+    const getOpeningPrice = await axios.get("https://query1.finance.yahoo.com/v8/finance/chart/TSLA").then((response) => {
+        priceNow = response.chart.result[0].meta.price.regularMarketPrice.raw.toFixed(2);
+        closing = response.chart.result[0].meta.price.regularMarketPreviousClose.raw.toFixed(2);
         message += "\nThe market is now open!\nTSLA previous close price is: $"+closing+".\nTSLA price right now is: $"+priceNow+".\n\nYou can now place your guesses for today using /guessla price (e.g. /guessla 420.69).";
         //context.log("success: "+response.status);
         //context.log("payload: "+JSON.stringify(response.data));
